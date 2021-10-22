@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #22577A;
+  color: #80ED99;
+}
+
+
+table, th, td {
+    border: 1px solid #38A3A5;
+  }
+
+html{
+  background-color: #22577A;
+}
+
