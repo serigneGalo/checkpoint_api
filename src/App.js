@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import './App.css';
 
+
 function App() {
   const [users,setUsers]= useState([])
   const fetchData= async()=>{
@@ -13,9 +14,13 @@ function App() {
   useEffect(()=>{
     fetchData()
   })
+
+// I add the <tbody> tag, because the tag table make some error.
+
   return (
     <div className="App">
       <table>
+        <tbody>
         <tr>
           <th>Id</th>
           <th>Name</th>
@@ -25,25 +30,22 @@ function App() {
           <th>Phone</th>
           <th>Website</th>
           <th>Company</th>
-
-
         </tr>
       
           {users.map((user, index) => (
-            <tr>
-              <td><div key={index}>{user.id}</div></td>
-              <td><div key={index}>{user.name}</div></td>
-              <td><div key={index}>{user.username}</div></td>              
-              <td><div key={index}>{user.email}</div></td>
-              <td><div key={index}>{user.address.street +user.address.street+ user.address.suit}</div></td>
-              <td><div key={index}>{user.phone}</div></td>
-              <td><div key={index}>{user.website}</div></td>
-              <td><div key={index}>{user.company.name}</div></td>
-
-
+            <tr key={index}>
+              <td><div >{user.id}</div></td>
+              <td><div>{user.name}</div></td>
+              <td><div>{user.username}</div></td>              
+              <td><div>{user.email}</div></td>
+              <td><div>{user.address.street +user.address.street+ user.address.suit}</div></td>
+              <td><div>{user.phone}</div></td>
+              <td><div>{user.website}</div></td>
+              <td><div>{user.company.name}</div></td>
             </tr>
         
         ))}
+        </tbody>
         </table>
     </div>
   );
